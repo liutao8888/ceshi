@@ -1,0 +1,44 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th class="bg-gray">期号</th>
+        <th class="bg-crimson">01</th>
+        <th class="bg-crimson">02</th>
+        <th class="bg-crimson">03</th>
+        <th class="bg-crimson">04</th>
+        <th class="bg-crimson">05</th>
+        <th class="bg-crimson">06</th>
+
+        <th class="bg-darkCyan">01</th>
+        <th class="bg-darkCyan">02</th>
+        <th class="bg-darkCyan">03</th>
+        <th class="bg-darkCyan">04</th>
+        <th class="bg-darkCyan">05</th>
+        <th class="bg-darkCyan">06</th>
+
+        <th class="bg-crimson">01</th>
+        <th class="bg-crimson">02</th>
+        <th class="bg-crimson">03</th>
+        <th class="bg-crimson">04</th>
+        <th class="bg-crimson">05</th>
+        <th class="bg-crimson">06</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%for(var i=m.length - 1;i>=0;i--){var round= m[i]%>
+    <tr>
+        <!--<div class="smallball">3</div>-->
+        <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="fg-black" style="width: 65px;"><%=round.round%></span></td>
+        <%_.each(round.balls.bai,function(ball){%>
+        <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-crimson fg-white<%}%>" style="width: 55px;"><b><%if(ball.value == 0){%><%=ball.name.substr(1,1)%><%}else{%><%=ball.value%><%}%></b></span></td>
+        <%});%>
+        <%_.each(round.balls.shi,function(ball){%>
+        <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-lightRed fg-white<%}%>" style="width: 55px;"><b><%if(ball.value == 0){%><%=ball.name.substr(1,1)%><%}else{%><%=ball.value%><%}%></b></span></td>
+        <%});%>
+        <%_.each(round.balls.ge,function(ball){%>
+        <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-crimson fg-white<%}%>" style="width: 55px;"><b><%if(ball.value == 0){%><%=ball.name.substr(1,1)%><%}else{%><%=ball.value%><%}%></b></span></td>
+        <%});%>
+    </tr>
+    <%}%>
+    </tbody>
+</table>

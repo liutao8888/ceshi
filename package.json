@@ -1,0 +1,27 @@
+﻿{
+  "name": "zhizhu",
+  "main": "index.html",
+  "version":"2.1.0.6",
+  "window": {
+        "title":"湖北自助",
+        "icon":"images/icon.png",
+        "height": 1024,
+        "width": 1024,
+        "toolbar":false,
+        "frame":true,
+        "fullscreen":false
+},
+  "dependencies": {
+        "async":"*",
+        "needle":"*",
+        "underscore":"*",
+        "ffi":"*",
+        "iconv-lite":"*",
+        "ref":"*",
+        "ref-array":"*",
+        "tracer":"*"
+  },
+  "webkit":{
+      "plugin":true
+  }
+}

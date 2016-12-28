@@ -1,0 +1,74 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th class="bg-gray">期号</th>
+        <th class="bg-crimson">01</th>
+        <th class="bg-crimson">02</th>
+        <th class="bg-crimson">03</th>
+        <th class="bg-crimson">04</th>
+        <th class="bg-crimson">05</th>
+        <th class="bg-crimson">06</th>
+        <th class="bg-crimson">07</th>
+        <th class="bg-crimson">08</th>
+        <th class="bg-crimson">09</th>
+        <th class="bg-crimson">10</th>
+
+        <th class="bg-crimson">11</th>
+        <th class="bg-crimson">12</th>
+        <th class="bg-crimson">13</th>
+        <th class="bg-crimson">14</th>
+        <th class="bg-crimson">15</th>
+        <th class="bg-crimson">16</th>
+        <th class="bg-crimson">17</th>
+        <th class="bg-crimson">18</th>
+        <th class="bg-crimson">19</th>
+        <th class="bg-crimson">20</th>
+
+        <th class="bg-crimson">21</th>
+        <th class="bg-crimson">22</th>
+        <th class="bg-crimson">23</th>
+        <th class="bg-crimson">24</th>
+        <th class="bg-crimson">25</th>
+        <th class="bg-crimson">26</th>
+        <th class="bg-crimson">27</th>
+        <th class="bg-crimson">28</th>
+        <th class="bg-crimson">29</th>
+        <th class="bg-crimson">30</th>
+
+        <th class="bg-crimson">31</th>
+        <th class="bg-crimson">32</th>
+        <th class="bg-crimson">33</th>
+
+        <th class="bg-darkCyan">01</th>
+        <th class="bg-darkCyan">02</th>
+        <th class="bg-darkCyan">03</th>
+        <th class="bg-darkCyan">04</th>
+        <th class="bg-darkCyan">05</th>
+        <th class="bg-darkCyan">06</th>
+        <th class="bg-darkCyan">07</th>
+        <th class="bg-darkCyan">08</th>
+        <th class="bg-darkCyan">09</th>
+        <th class="bg-darkCyan">10</th>
+
+        <th class="bg-darkCyan">11</th>
+        <th class="bg-darkCyan">12</th>
+        <th class="bg-darkCyan">13</th>
+        <th class="bg-darkCyan">14</th>
+        <th class="bg-darkCyan">15</th>
+        <th class="bg-darkCyan">16</th>
+    </tr>
+    </thead>
+<tbody>
+<%for(var i=m.length - 1;i>=0;i--){var round= m[i]%>
+<tr>
+    <td class="<%if(i%2 != 0){%>bg-white<%}%>"><span class="fg-black" style="width: 55px;"><%=round.round%></span></td>
+    <%_.each(round.balls.reds,function(red){%>
+    <td class="<%if(i%2 != 0){%>bg-white<%}%>"><span class="<%if(red.value == 0){%>bg-lightRed fg-white<%}%>" style="width: 16px;"><b><%if(red.value == 0){%><%=red.name%><%}else{%><%=red.value%><%}%></b></span></td>
+    <%});%>
+    <%_.each(round.balls.blues,function(ball){%>
+    <td class="<%if(i%2 != 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-blue fg-white<%}%>" style="width: 16px;"><b><%if(ball.value == 0){%><%=ball.name%><%}else{%><%=ball.value%><%}%></b></span></td>
+    <%});%>
+</tr>
+<%}%>
+</tbody>
+</table>

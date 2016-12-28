@@ -1,0 +1,1 @@
+打印格式文件[.\receiptfmt\receiptEMV.fmt]不存在,请检查

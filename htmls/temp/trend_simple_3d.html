@@ -1,0 +1,60 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th class="bg-gray" rowspan="2">期号</th>
+        <th class="bg-crimson" colspan="10">百位号码走势</th>
+        <th class="bg-red" colspan="10">十位号码走势</th>
+        <th class="bg-crimson" colspan="10">个位号码走势</th>
+    </tr>
+    <tr>
+        <th class="bg-crimson">0</th>
+        <th class="bg-crimson">1</th>
+        <th class="bg-crimson">2</th>
+        <th class="bg-crimson">3</th>
+        <th class="bg-crimson">4</th>
+        <th class="bg-crimson">5</th>
+        <th class="bg-crimson">6</th>
+        <th class="bg-crimson">7</th>
+        <th class="bg-crimson">8</th>
+        <th class="bg-crimson">9</th>
+
+        <th class="bg-red">0</th>
+        <th class="bg-red">1</th>
+        <th class="bg-red">2</th>
+        <th class="bg-red">3</th>
+        <th class="bg-red">4</th>
+        <th class="bg-red">5</th>
+        <th class="bg-red">6</th>
+        <th class="bg-red">7</th>
+        <th class="bg-red">8</th>
+        <th class="bg-red">9</th>
+
+        <th class="bg-crimson">0</th>
+        <th class="bg-crimson">1</th>
+        <th class="bg-crimson">2</th>
+        <th class="bg-crimson">3</th>
+        <th class="bg-crimson">4</th>
+        <th class="bg-crimson">5</th>
+        <th class="bg-crimson">6</th>
+        <th class="bg-crimson">7</th>
+        <th class="bg-crimson">8</th>
+        <th class="bg-crimson">9</th>
+    </tr>
+    </thead>
+<tbody>
+<%for(var i=m.length - 1;i>=0;i--){var round= m[i]%>
+<tr>
+    <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="fg-black" style="width: 55px;"><%=round.round%></span></td>
+    <%_.each(round.balls.bai,function(ball){%>
+    <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-crimson fg-white<%}%>" style="width: 30px;"><b><%if(ball.value == 0){%><%=ball.name%><%}else{%><%=ball.value%><%}%></b></span></td>
+    <%});%>
+    <%_.each(round.balls.shi,function(ball){%>
+    <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-lightRed fg-white<%}%>" style="width: 30px;"><b><%if(ball.value == 0){%><%=ball.name%><%}else{%><%=ball.value%><%}%></b></span></td>
+    <%});%>
+    <%_.each(round.balls.ge,function(ball){%>
+    <td class="<%if(i%2 == 0){%>bg-white<%}%>"><span class="<%if(ball.value == 0){%>bg-crimson fg-white<%}%>" style="width: 30px;"><b><%if(ball.value == 0){%><%=ball.name%><%}else{%><%=ball.value%><%}%></b></span></td>
+    <%});%>
+</tr>
+<%}%>
+</tbody>
+</table>
